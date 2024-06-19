@@ -15,13 +15,13 @@ def execute(filters=None):
 			DATE_FORMAT(start_date, '%Y')
 		) AS Debit_Narration,
 		CONCAT(
-			'Incygys Salary ', 
+			' Incygys Salary ', 
 			UPPER(DATE_FORMAT(start_date, '%M')), 
 			' ', 
 			DATE_FORMAT(start_date, '%Y')
 		) AS Credit_Narration
 		 from `tabSalary Slip` s inner join `tabEmployee` e on  s.employee=e.name
-		 where s.docstatus=1 and s.bank_name=="Kotak Mahindra bank" {0} """.format(cond)
+		 where s.docstatus=1 and s.bank_name="Kotak Mahindra Bank" {0} """.format(cond)
 	data =frappe.db.sql(sql,as_dict=1)
 	columns = get_columns()
 
