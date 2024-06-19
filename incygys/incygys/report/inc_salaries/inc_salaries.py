@@ -11,11 +11,11 @@ def execute(filters=None):
 custom_ifsc_code,bank_account_no as Beneficiary_Acc_No,
  CONCAT(
 	UPPER(DATE_FORMAT(start_date, '%M')), 
-	' SALARIES ', 
+	' Incygys salary ', 
 	DATE_FORMAT(start_date, '%Y')
 ) AS Debit_Narration,
 CONCAT(
-	'SALARY FOR THE MONTH OF ', 
+	'Incygys salary', 
 	UPPER(DATE_FORMAT(start_date, '%M')), 
 	' ', 
 	DATE_FORMAT(start_date, '%Y')
