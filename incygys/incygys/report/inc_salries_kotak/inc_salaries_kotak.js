@@ -1,7 +1,7 @@
 // Copyright (c) 2024, gskishan and contributors
 // For license information, please see license.txt
 
-frappe.query_reports["Inycgys Kotak Bank Salaries"] = {
+frappe.query_reports["Incygys Kotak Bank Salaries"] = {
 	"filters": [
 		{
 			"fieldname":"company",
