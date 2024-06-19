@@ -1,7 +1,7 @@
 // Copyright (c) 2024, gskishan and contributors
 // For license information, please see license.txt
 
-frappe.query_reports["CB Salaries Kotak"] = {
+frappe.query_reports["Incygys Salaries Kotak"] = {
 	"filters": [
 		{
 			"fieldname":"company",
