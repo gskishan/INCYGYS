@@ -6,7 +6,7 @@ from frappe import _
 
 def execute(filters=None):
 	cond=data_condtion(filters)
-	sql="""select "INCYGYS" client_code,"SALPAY" product_code,"IFT" Payment_Type,"" Payment_Ref_No,posting_date,"" instrument_date,
+	sql="""select "CODEBEES" client_code,"SALPAY" product_code,"IFT" Payment_Type,"" Payment_Ref_No,posting_date,"" instrument_date,
 		"4612845288" Dr_Ac_No,net_pay as amount,"M" Bank_Code_Indicator,"" Beneficiary_Code, upper(s.custom_account_name) as Beneficiary_Name,"" Beneficiary_Bank,
 		custom_ifsc_code ,bank_account_no Beneficiary_Acc_No,
 		 CONCAT(
