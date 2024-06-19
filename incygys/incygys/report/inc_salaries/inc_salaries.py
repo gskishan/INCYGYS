@@ -7,11 +7,12 @@ from frappe import _
 def execute(filters=None):
 	cond=data_condtion(filters)
 	sql="""select "INCYGYS" client_code,"SALPAY" product_code,"NEFT" Payment_Type,"" Payment_Ref_No,posting_date,"" instrument_date,
-"4612845288" Dr_Ac_No,net_pay as amount,"M" Bank_Code_Indicator,"" Beneficiary_Code, upper(s.employee_name) as Beneficiary_Name,"" Beneficiary_Bank,
+"4612845288" Dr_Ac_No,net_pay as amount,"M" Bank_Code_Indicator,"" Beneficiary_Code, upper(s.employee_name) as Beneficiary_Name,bank_name as Beneficiary_Bank,
 custom_ifsc_code,bank_account_no as Beneficiary_Acc_No,
- CONCAT(
-	UPPER(DATE_FORMAT(start_date, '%M')), 
+ CONCAT( 
 	' Incygys salary ', 
+ 	UPPER(DATE_FORMAT(start_date, '%M')),
+ 	 ' ',
 	DATE_FORMAT(start_date, '%Y')
 ) AS Debit_Narration,
 CONCAT(
