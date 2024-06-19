@@ -1,7 +1,7 @@
 // Copyright (c) 2024, gskishan and contributors
 // For license information, please see license.txt
 
-frappe.query_reports["CB Salaries"] = {
+frappe.query_reports["INC Salaries"] = {
 	"filters": [
 		{
 			"fieldname":"company",
