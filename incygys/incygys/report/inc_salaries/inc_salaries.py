@@ -8,7 +8,7 @@ def execute(filters=None):
 	cond=data_condtion(filters)
 	sql="""select "INCYGYS" client_code,"SALPAY" product_code,"NEFT" Payment_Type,"" Payment_Ref_No,posting_date,"" instrument_date,
 "4612845288" Dr_Ac_No,net_pay as amount,"M" Bank_Code_Indicator,"" Beneficiary_Code, upper(s.employee_name) as Beneficiary_Name, upper(s.bank_name) as Beneficiary_Bank,
-custom_ifsc_code,bank_account_no as Beneficiary_Acc_No,
+e.ifsc_code as Beneficiary_Branch / IFSC Code,bank_account_no as Beneficiary_Acc_No,
  CONCAT( 
 	' Incygys salary ', 
  	UPPER(DATE_FORMAT(start_date, '%M')),
@@ -122,7 +122,7 @@ def get_columns():
 		},
 			{
 			'label': _('Beneficiary_Branch / IFSC Code'),
-			'fieldname':  "custom_ifsc_code",
+			'fieldname':  "IFSC Code",
 			'fieldtype': 'Data',
 			'width': 160
 		},
