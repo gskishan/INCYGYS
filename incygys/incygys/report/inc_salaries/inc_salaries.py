@@ -122,7 +122,7 @@ def get_columns():
 		},
 			{
 			'label': _('Beneficiary_Branch / IFSC Code'),
-			'fieldname':  "IFSC Code",
+			'fieldname':  "ifsc_code",
 			'fieldtype': 'Data',
 			'width': 160
 		},
