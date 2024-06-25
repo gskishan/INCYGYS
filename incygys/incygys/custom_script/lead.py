@@ -7,13 +7,14 @@ def create_opportunity_on_lead_update(doc, method):
             opportunity = frappe.get_doc({
                 "doctype": "Opportunity",
                 "opportunity_from": "Lead",
-                "party_name": doc.lead_name,
-                "lead": doc.name,
-                "opportunity_type": "Sales",
+                "party_name": doc.first_name,
+                # "lead": doc.name,
+                "custom_construction_status": doc.custom_construction_status,
                 "source": doc.source,
-                "contact_person": doc.contact_person,
-                "contact_email": doc.email_id,
-                "company": doc.company,
+                "contact_person": doc.custom_supervisor_name,
+                "contact_mobile": doc.custom_supervisor_phone,
+                # "contact_email": doc.email_id,
+                "company": doc.custom_sales_organization,
                 "transaction_date": frappe.utils.nowdate(),
             })
             opportunity.insert(ignore_permissions=True)
