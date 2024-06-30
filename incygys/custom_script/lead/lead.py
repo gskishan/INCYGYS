@@ -19,6 +19,6 @@ def create_opportunity_from_lead(lead_name):
     except Exception as e:
         frappe.log_error(f"An error occurred while creating an opportunity from lead {lead_name}: {str(e)}")
 
-def lead_after_save(doc, method):
+def lead_validate(doc, method):
     if doc.custom_lead_status == "Interested":
         create_opportunity_from_lead(doc.name)
