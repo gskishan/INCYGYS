@@ -13,6 +13,7 @@ def create_opportunity_from_lead(lead_name):
         opportunity.party_name = lead.lead_name
         opportunity.insert()
         frappe.msgprint(f"Opportunity {opportunity.name} created from Lead {lead.name}")
+        print(lead.name)
         return opportunity
 
 def lead_validate(doc, method):
