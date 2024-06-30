@@ -123,7 +123,7 @@ app_license = "mit"
 # Hook on document methods and events
 doc_events = {
     "Lead": {
-        "after_save": "incygys.custom_script.lead.lead.lead_after_save"
+        "validate": "incygys.custom_script.lead.lead.lead_validate"
     },
 }
 # doc_events = {
