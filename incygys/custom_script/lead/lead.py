@@ -11,7 +11,7 @@ def create_opportunity_from_lead(lead_name):
             opportunity.contact_email = lead.email_id
             opportunity.contact_mobile = lead.mobile_no
             opportunity.opportunity_from = "Lead"
-            opportunity.insert()
+            opportunity.save()
             frappe.msgprint(f"Opportunity {opportunity.name} created from Lead {lead.name}")
             return opportunity
     except frappe.DoesNotExistError:
