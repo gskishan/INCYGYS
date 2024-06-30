@@ -5,15 +5,13 @@ def create_opportunity_from_lead(lead_name):
     lead = frappe.get_doc("Lead", lead_name)
     if lead.custom_lead_status == "Interested":
         opportunity = frappe.new_doc("Opportunity")
-        opportunity.lead = lead.name
-        opportunity.customer_name = lead.lead_name
-        opportunity.contact_email = lead.email_id
+        opportunity.party_name = lead.name
+        opportunity.custom_source_type = lead.custom_source_type
+        opportunity.contact_email = lead.custom_email
         opportunity.contact_mobile = lead.mobile_no
         opportunity.opportunity_from = "Lead"
-        opportunity.party_name = lead.lead_name
         opportunity.insert()
         frappe.msgprint(f"Opportunity {opportunity.name} created from Lead {lead.name}")
-        print(f"Validated Lead: {lead.name}")
         return opportunity
 
 def lead_validate(doc, method):
