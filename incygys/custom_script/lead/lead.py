@@ -14,6 +14,7 @@ def create_opportunity_on_lead_status(doc, method):
         opportunity.custom_property_type == doc.custom_property_type
         opportunity.custom_sq_ft == doc.custom_sq_ft
         opportunity.custom_opportunity_name == doc.lead_name
+        opportunity.opportunity_owner == doc.lead_owner
 
         opportunity.insert()
         frappe.db.commit()
