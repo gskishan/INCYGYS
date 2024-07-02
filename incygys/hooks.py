@@ -123,7 +123,7 @@ override_doctype_class = {
 # Hook on document methods and events
 doc_events = {
     "Lead": {
-        "after_save": "incygys.custom_script.lead.lead.create_opportunity_on_lead_status"
+        "on_update": "incygys.custom_script.lead.lead.create_opportunity_on_lead_status"
     },
 }
 # doc_events = {
