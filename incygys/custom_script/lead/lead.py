@@ -17,6 +17,6 @@ def create_opportunity_on_lead_status(doc, method):
 
         
         doc.opportunity = opportunity.name
-        doc.save()
+        doc.save(ignore_version=True)
 
         frappe.msgprint(f'Opportunity {opportunity.name} has been created for Lead {doc.name}')
