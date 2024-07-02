@@ -21,3 +21,4 @@ def create_opportunity_on_lead_status(doc, method):
         # Optionally, you can link this opportunity back to the lead
         doc.opportunity = opportunity.name
         doc.save()
+        frappe.msgprint(f'Opportunity {opportunity.name} has been created for Lead {doc.name}')
