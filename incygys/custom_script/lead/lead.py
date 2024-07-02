@@ -1,24 +1,23 @@
 import frappe
+from erpnext.crm.doctype.opportunity.opportunity import Opportunity
 
 @frappe.whitelist()
-def create_opportunity_from_lead(lead_name):
-    try:
-        lead = frappe.get_doc("Lead", lead_name)
-        if lead.custom_lead_status == "Interested":
-            opportunity = frappe.new_doc("Opportunity")
-            opportunity.party_name = lead.name
-            opportunity.custom_source_type = lead.custom_source_type
-            opportunity.contact_email = lead.email_id
-            opportunity.contact_mobile = lead.mobile_no
-            opportunity.opportunity_from = "Lead"
-            opportunity.save()
-            frappe.msgprint(f"Opportunity {opportunity.name} created from Lead {lead.name}")
-            return opportunity
-    except frappe.DoesNotExistError:
-        frappe.msgprint(f"Lead {lead_name} not found")
-    except Exception as e:
-        frappe.log_error(f"An error occurred while creating an opportunity from lead {lead_name}: {str(e)}")
-
-def lead_validate(doc, method):
+def create_opportunity_on_lead_status(doc, method):
+    # Check if the lead status is 'Interested'
     if doc.custom_lead_status == "Interested":
-        create_opportunity_from_lead(doc.name)
+        # Create a new Opportunity
+        opportunity = frappe.new_doc("Opportunity")
+        opportunity.party_name = lead.name
+        opportunity.custom_source_type = lead.custom_source_type
+        opportunity.contact_email = lead.email_id
+        opportunity.contact_mobile = lead.mobile_no
+        opportunity.opportunity_from = "Lead"
+        opportunity.company = lead.custom_sales_organization
+
+        # Save the Opportunity
+        opportunity.insert()
+        frappe.db.commit()
+
+        # Optionally, you can link this opportunity back to the lead
+        doc.opportunity = opportunity.name
+        doc.save()
