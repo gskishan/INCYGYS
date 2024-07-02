@@ -1,4 +1,5 @@
 import frappe
+from frappe import _
 from erpnext.crm.doctype.opportunity.opportunity import Opportunity
 
 @frappe.whitelist()
