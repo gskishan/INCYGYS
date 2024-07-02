@@ -5,11 +5,11 @@ from erpnext.crm.doctype.opportunity.opportunity import Opportunity
 def create_opportunity_on_lead_status(doc, method):
     if doc.custom_lead_status == "Interested":
         opportunity = frappe.new_doc("Opportunity")
-        # opportunity.party_name = doc.name
+        opportunity.party_name = doc.name
         opportunity.custom_source_type = doc.custom_source_type
         opportunity.contact_email = doc.email_id
         opportunity.contact_mobile = doc.mobile_no
-        # opportunity.opportunity_from = "Lead"
+        opportunity.opportunity_from = "Lead"
         opportunity.company = doc.custom_sales_organization
 
         opportunity.insert()
