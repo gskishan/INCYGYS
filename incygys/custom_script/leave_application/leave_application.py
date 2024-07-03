@@ -8,20 +8,20 @@ from frappe.utils import (
 class CustomLeaveApplication(LeaveApplication):
 	def create_or_update_attendance(self, attendance_name, date):
 		frappe.errprint("1onerp")
-		status = (
-			"Half Day" if self.half_day_date and getdate(date) == getdate(self.half_day_date) else "On Leave"
-		)
-		sql=""" select *  from  `tabLeave Application` where employee="{0}" and from_date="{1}" and to_date ="{2}" and status="Approved" """.format(self.employee,self.from_date,self.to_date)
-		half_day_date_count=0
-		for d in (frappe.db.sql(sql,as_dict=True)):
-			if d.half_day:
-				half_day_date_count+=1
+		# status = (
+		# 	"Half Day" if self.half_day_date and getdate(date) == getdate(self.half_day_date) else "On Leave"
+		# )
+		# sql=""" select *  from  `tabLeave Application` where employee="{0}" and from_date="{1}" and to_date ="{2}" and status="Approved" """.format(self.employee,self.from_date,self.to_date)
+		# half_day_date_count=0
+		# for d in (frappe.db.sql(sql,as_dict=True)):
+		# 	if d.half_day:
+		# 		half_day_date_count+=1
 
 
 		if attendance_name:
-			if status=="Half Day":
-				if half_day_date_count==2:
-					status="On Leave"
+			# if status=="Half Day":
+			# 	if half_day_date_count==2:
+			# 		status="On Leave"
 
 			# update existing attendance, change absent to on leave
 			doc = frappe.get_doc("Attendance", attendance_name)
