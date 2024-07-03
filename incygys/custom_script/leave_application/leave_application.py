@@ -21,7 +21,6 @@ class CustomLeaveApplication(LeaveApplication):
 			if status=="Half Day":
 				if half_day_date_count==2:
 					status="On Leave"
-			frappe.errprint(status)
 
 			# update existing attendance, change absent to on leave
 			doc = frappe.get_doc("Attendance", attendance_name)
