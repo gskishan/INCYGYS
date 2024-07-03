@@ -3,7 +3,7 @@ from erpnext.crm.doctype.opportunity.opportunity import Opportunity
 
 @frappe.whitelist()
 def create_opportunity_on_lead_status(doc, method):
-    if doc.custom_lead_status == "Interested":
+    if doc.custom_lead_status == "Interested" and not doc.opportunity:
         opportunity = frappe.new_doc("Opportunity")
         opportunity.party_name = doc.name
         opportunity.custom_source_type = doc.custom_source_type
@@ -15,12 +15,6 @@ def create_opportunity_on_lead_status(doc, method):
         opportunity.custom_sq_ft == doc.custom_sq_ft
         opportunity.custom_opportunity_name == doc.lead_name
         opportunity.opportunity_owner == doc.lead_owner
-
-        opportunity.insert()
-        frappe.db.commit()
-
-        
+        opportunity.save()
         doc.opportunity = opportunity.name
-        doc.save()
-
         frappe.msgprint(f'Opportunity {opportunity.name} has been created for Lead {doc.name}')
