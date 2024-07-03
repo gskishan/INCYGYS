@@ -114,9 +114,9 @@ app_license = "mit"
 # ---------------
 # Override standard doctype classes
 
-override_doctype_class = {
-	"Attendance": "incygys.custom_script.leave_application.leave_application.CustomLeaveApplication",
-}
+# override_doctype_class = {
+# 	"Attendance": "incygys.custom_script.leave_application.leave_application.CustomLeaveApplication",
+# }
 
 # Document Events
 # ---------------
