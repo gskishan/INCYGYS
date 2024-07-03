@@ -3,7 +3,7 @@ from erpnext.crm.doctype.opportunity.opportunity import Opportunity
 
 @frappe.whitelist()
 def create_opportunity_on_lead_status(doc, method):
-    if doc.custom_lead_status == "Interested" and not doc.opportunity:
+    if doc.custom_lead_status == "Interested" and not doc.custom_opportunity:
         opportunity = frappe.new_doc("Opportunity")
         opportunity.party_name = doc.name
         opportunity.custom_source_type = doc.custom_source_type
