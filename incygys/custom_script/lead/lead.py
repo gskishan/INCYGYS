@@ -15,7 +15,6 @@ def create_opportunity_on_lead_status(doc, method):
         opportunity.custom_sq_ft == doc.custom_sq_ft
         opportunity.custom_opportunity_name == doc.lead_name
         opportunity.opportunity_owner == doc.lead_owner
-        frappe.errprint([opportunity.party_name, opportunity.opportunity_from])
         opportunity.save()
         doc.db_set("custom_opportunity",opportunity.name,update_modified=False)
         frappe.msgprint(f'Opportunity {opportunity.name} has been created for Lead {doc.name}')
