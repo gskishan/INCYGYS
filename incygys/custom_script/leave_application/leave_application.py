@@ -7,6 +7,7 @@ from frappe.utils import (
 )
 class CustomLeaveApplication(LeaveApplication):
 	def create_or_update_attendance(self, attendance_name, date):
+		frappe.errprint("1onerp")
 		status = (
 			"Half Day" if self.half_day_date and getdate(date) == getdate(self.half_day_date) else "On Leave"
 		)
