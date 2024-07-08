@@ -23,10 +23,10 @@ def get_data(filters):
     employees = frappe.get_all('Employee', fields=['name', 'employee_name'])
     
     for employee in employees:
-        open_count = frappe.db.count('Enquiry', {'enquiry_owner': employee.name, 'status': 'Open'})
-        interested_count = frappe.db.count('Enquiry', {'enquiry_owner': employee.name, 'status': 'Interested'})
-        quotation_count = frappe.db.count('Enquiry', {'enquiry_owner': employee.name, 'status': 'Quotation'})
-        do_not_contact_count = frappe.db.count('Enquiry', {'enquiry_owner': employee.name, 'status': 'Do Not Contact'})
+        open_count = frappe.db.count('Lead', {'enquiry_owner': employee.name, 'status': 'Open'})
+        interested_count = frappe.db.count('Lead', {'enquiry_owner': employee.name, 'status': 'Interested'})
+        quotation_count = frappe.db.count('Lead', {'enquiry_owner': employee.name, 'status': 'Quotation'})
+        do_not_contact_count = frappe.db.count('Lead', {'enquiry_owner': employee.name, 'status': 'Do Not Contact'})
 
         row = {
             "employee": employee.name,
