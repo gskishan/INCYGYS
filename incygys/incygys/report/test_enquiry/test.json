@@ -15,6 +15,7 @@
  "name": "Test",
  "owner": "Administrator",
  "prepared_report": 0,
+ "ref_doctype": "Lead",
  "report_name": "Test",
  "report_type": "Script Report",
  "roles": [
