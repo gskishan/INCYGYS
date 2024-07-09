@@ -5,7 +5,7 @@ from frappe.utils import today
 def allocate_leaves_on_employee_creation(doc, method):
     leave_types = ['Casual Leave', 'Privilege Leave', 'Sick Leave']
     allocation_data = {
-        'Casual Leave': {'new_leaves_allocated': 0.500},  # Example allocation, adjust as needed
+        'Casual Leave': {'new_leaves_allocated': 0.5},  # Example allocation, adjust as needed
         'Privilege Leave': {'new_leaves_allocated': 0},  # Example allocation, adjust as needed
         'Sick Leave': {'new_leaves_allocated': 0.5}  # Example allocation, adjust as needed
     }
