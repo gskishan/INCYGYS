@@ -19,7 +19,7 @@ def create_opportunity_on_lead_status(doc, method):
         opportunity.custom_construction_type = doc.custom_construction_type
         opportunity.expected_closing = doc.custom_requirement_stage_date
         opportunity.country = doc.country
-        opportunity.custom_states = doc.custom_state_name
+        opportunity.custom_state_copy = doc.custom_state_copy
         opportunity.city = doc.city
         opportunity.custom_address = doc.custom_address
         opportunity.custom_type_opportunity = doc.type
