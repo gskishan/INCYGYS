@@ -22,7 +22,6 @@ def create_opportunity_on_lead_status(doc, method):
         opportunity.custom_state_copy = doc.custom_state_copy
         opportunity.city = doc.city
         opportunity.custom_address = doc.custom_address
-        opportunity.custom_type_opportunity = doc.type
         opportunity.custom_supervisor_name = doc.custom_supervisor_name
         opportunity.custom_supervisor_phone = doc.custom_supervisor_phone
         opportunity.contact_email = doc.email_id
