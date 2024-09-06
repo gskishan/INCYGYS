@@ -8,7 +8,7 @@ def create_opportunity_on_lead_status(doc, method):
         opportunity.party_name = doc.name
         opportunity.custom_source_type = doc.custom_source_type
         opportunity.custom_salutation = doc.salutation
-        opportunity.custom_city_list = doc.custom_city_list
+        opportunity.custom_city_name = doc.custom_city_name
         opportunity.custom_emails = doc.custom_email
         opportunity.custom_mobiles = doc.custom_mobile_numbers
         opportunity.opportunity_from = "Lead"
