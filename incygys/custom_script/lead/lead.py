@@ -2,10 +2,7 @@ import frappe
 from erpnext.crm.doctype.opportunity.opportunity import Opportunity
 
 def duplicate_check(doc, method):
-    # Normalize the mobile number by removing '+91' and any dashes ('-')
     mobile_no = str(doc.custom_mobile_numbers).replace("+91", "").replace("-", "").strip()
-
-    # Use a prepared SQL statement for safety
     sql = """SELECT * FROM `tabLead` WHERE REPLACE(REPLACE(mobile_no, '+91', ''), '-', '') = %s AND name != %s"""
     data = frappe.db.sql(sql, (mobile_no, doc.name), as_dict=True)
 
