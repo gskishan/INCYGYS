@@ -1,6 +1,15 @@
 import frappe
 from erpnext.crm.doctype.opportunity.opportunity import Opportunity
 
+def duplicate_check(doc, method):
+    mobile_no = str(doc.custom_mobile_numbers)  # Ensure mobile_no is a string
+    sql = """select * from `tabLead` where mobile_no="{0}" and name!="{1}" """.format(mobile_no, doc.name)
+    data = frappe.db.sql(sql, as_dict=True)
+    if data:
+        frappe.errprint(data)
+        frappe.throw("Duplicate mobile no {} already linked to <b>{}</b> ".format(mobile_no, data[0].custom_owner_name))
+
+
 @frappe.whitelist()
 def create_opportunity_on_lead_status(doc, method):
     if doc.custom_lead_status == "Interested" and not doc.custom_opportunity:
@@ -35,3 +44,9 @@ def create_opportunity_on_lead_status(doc, method):
         opportunity.save()
         doc.db_set("custom_opportunity", opportunity.name, update_modified=False)
         frappe.msgprint(f'Opportunity {opportunity.name} has been created for Lead {doc.name}')
+
+def lead_before_save(doc, method):
+    duplicate_check(doc, method)
+
+def lead_after_save(doc, method):
+    create_opportunity_on_lead_status(doc, method)
