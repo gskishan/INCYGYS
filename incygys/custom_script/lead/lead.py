@@ -9,9 +9,15 @@ def duplicate_check(doc, method):
     sql = """SELECT * FROM `tabLead` WHERE REPLACE(REPLACE(mobile_no, '+91', ''), '-', '') = %s AND name != %s"""
     data = frappe.db.sql(sql, (mobile_no, doc.name), as_dict=True)
 
+    email_sql = """SELECT * FROM `tabLead` WHERE custom_email = %s AND name != %s"""
+    email_data = frappe.db.sql(email_sql, (doc.custom_email, doc.name), as_dict=True)
+
     if data:
         frappe.errprint(data)
         frappe.throw(f"Duplicate mobile number {mobile_no} already linked to <b>{data[0].custom_owner_name}</b>")
+     if email_data:
+        frappe.errprint(email_data)
+        frappe.throw(f"Duplicate email {doc.custom_email} already linked to <b>{email_data[0].custom_owner_name}</b>")
 
 @frappe.whitelist()
 def create_opportunity_on_lead_status(doc, method):
