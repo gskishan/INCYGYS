@@ -53,9 +53,3 @@ def create_opportunity_on_lead_status(doc, method):
         opportunity.save()
         doc.db_set("custom_opportunity", opportunity.name, update_modified=False)
         frappe.msgprint(f'Opportunity {opportunity.name} has been created for Lead {doc.name}')
-
-def lead_before_save(doc, method):
-    duplicate_check(doc, method)
-
-def lead_after_save(doc, method):
-    create_opportunity_on_lead_status(doc, method)
