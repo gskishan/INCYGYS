@@ -19,7 +19,7 @@ def duplicate_check(doc, method):
 
         if data:
             frappe.errprint(data)
-            frappe.throw(f"Duplicate mobile number {custom_mobile_numbers} already linked to <b>{data[0].custom_owner_name}</b>")
+            frappe.throw(f"Duplicate mobile number {0} already linked to <b>{1}</b>".format(data[0].custom_mobile_numbers,data[0].custom_owner_name)
         if email_data:
             frappe.errprint(email_data)
             frappe.throw(f"Duplicate email {doc.custom_email} already linked to <b>{email_data[0].custom_owner_name}</b>")
