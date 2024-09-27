@@ -13,6 +13,8 @@ def duplicate_check(doc, method):
 
         email_sql = """SELECT * FROM `tabLead` WHERE custom_email = "{0}" """.format(doc.custom_email)
         email_data = frappe.db.sql(email_sql, as_dict=True)
+        frappe.errprint(sql)
+        frappe.errprint(email_sql)
 
         if data:
             frappe.errprint(data)
