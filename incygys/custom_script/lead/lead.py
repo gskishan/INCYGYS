@@ -4,7 +4,8 @@ from erpnext.crm.doctype.opportunity.opportunity import Opportunity
 def duplicate_check(doc, method):
     if (doc.is_new()):
         sql = """SELECT
-        custom_mobile_numbers, name
+        custom_mobile_numbers, name,
+        custom_owner_name
         FROM
         `tabLead`
         WHERE
@@ -18,7 +19,7 @@ def duplicate_check(doc, method):
 
         if data:
             frappe.errprint(data)
-            frappe.throw(f"Duplicate mobile number {mobile_no} already linked to <b>{data[0].custom_owner_name}</b>")
+            frappe.throw(f"Duplicate mobile number {custom_mobile_numbers} already linked to <b>{data[0].custom_owner_name}</b>")
         if email_data:
             frappe.errprint(email_data)
             frappe.throw(f"Duplicate email {doc.custom_email} already linked to <b>{email_data[0].custom_owner_name}</b>")
