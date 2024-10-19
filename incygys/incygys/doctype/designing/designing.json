@@ -1,0 +1,134 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-07-03 16:24:34.284369",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_esv5",
+  "amended_from",
+  "designer",
+  "designer_name",
+  "designing_status",
+  "column_break_mqtw",
+  "opportunity_id",
+  "customer_name",
+  "customer_number",
+  "designing_photos_section",
+  "table_qlga",
+  "section_break_lcmz",
+  "bom"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_esv5",
+   "fieldtype": "Section Break",
+   "label": "Overview"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Designing",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "designer",
+   "fieldtype": "Link",
+   "label": "Designer",
+   "link_filters": "[[\"Employee\",\"designation\",\"=\",\"Design Engineer\"],[\"Employee\",\"designation\",\"=\",\"Sr Design Engineer\"]]",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "designer.employee_name",
+   "fieldname": "designer_name",
+   "fieldtype": "Data",
+   "label": "Designer Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "designing_status",
+   "fieldtype": "Select",
+   "label": "Designing Status",
+   "options": "\nOpen\nCompleted"
+  },
+  {
+   "fieldname": "column_break_mqtw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "opportunity_id",
+   "fieldtype": "Link",
+   "label": "Opportunity ID",
+   "options": "Opportunity"
+  },
+  {
+   "fieldname": "customer_name",
+   "fieldtype": "Link",
+   "label": "Customer Name",
+   "options": "Customer"
+  },
+  {
+   "fetch_from": "customer_name.mobile_no",
+   "fieldname": "customer_number",
+   "fieldtype": "Data",
+   "label": "Customer Number",
+   "read_only": 1
+  },
+  {
+   "fieldname": "designing_photos_section",
+   "fieldtype": "Section Break",
+   "label": "Designing Photos"
+  },
+  {
+   "fieldname": "table_qlga",
+   "fieldtype": "Table",
+   "label": "Design",
+   "options": "Design"
+  },
+  {
+   "fieldname": "section_break_lcmz",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "bom",
+   "fieldtype": "Table",
+   "label": "BOM",
+   "options": "BOM Item"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [
+  {
+   "link_doctype": "Quotation",
+   "link_fieldname": "custom_designing_number"
+  }
+ ],
+ "modified": "2024-10-19 12:24:29.559384",
+ "modified_by": "Administrator",
+ "module": "Incygys",
+ "name": "Designing",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

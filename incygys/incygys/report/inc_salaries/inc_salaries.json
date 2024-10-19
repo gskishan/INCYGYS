@@ -1,5 +1,5 @@
 {
- "add_total_row": 0,
+ "add_total_row": 1,
  "columns": [],
  "creation": "2024-06-19 22:01:32.803855",
  "disabled": 0,
@@ -9,13 +9,14 @@
  "idx": 0,
  "is_standard": "Yes",
  "letterhead": null,
- "modified": "2024-06-19 09:06:55.011169",
+ "modified": "2024-06-19 16:12:20.590816",
  "modified_by": "Administrator",
- "module": "incygys",
+ "module": "Incygys",
  "name": "INC Salaries",
  "owner": "Administrator",
  "prepared_report": 0,
  "ref_doctype": "Salary Slip",
- "report_name": "Incygys Salaries",
- "report_type": "Script Report"
+ "report_name": "INC Salaries",
+ "report_type": "Script Report",
+ "roles": []
 }
