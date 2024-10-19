@@ -236,4 +236,4 @@ doc_events = {
 # default_log_clearing_doctypes = {
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
-ixtures = ["Custom Field","Property Setter","Print Format"]
+fixtures = ["Custom Field","Property Setter","Print Format"]
