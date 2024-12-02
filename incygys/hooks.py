@@ -127,6 +127,7 @@ doc_events = {
         "on_update": "incygys.custom_script.lead.lead.create_opportunity_on_lead_status",
 	    "validate": "incygys.custom_script.lead.lead.duplicate_check"
     },
+	"Opportunity": "incygys.custom_script.lead.opportunity.duplicate_check"
     "Employee": {
         "after_insert": "incygys.custom_script.leave_allocation.leave_allocation.allocate_leaves_on_employee_creation"
     }
