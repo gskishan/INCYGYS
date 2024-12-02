@@ -50,6 +50,8 @@ def create_opportunity_on_lead_status(doc, method):
         opportunity.custom_supervisor_name = doc.custom_supervisor_name
         opportunity.custom_supervisor_phone = doc.custom_supervisor_phone
         opportunity.contact_email = doc.email_id
+        opportunity.custom_probability_percentage = doc.custom_probability
+        opportunity.custom_opportunity_percentage = doc.custom_opportunity_amount
         
         for product in doc.custom_list_of_products:
             opportunity.append('custom_list_of_products', {
