@@ -1,0 +1,27 @@
+{
+    "doctype": "Report",
+    "name": "Custom Lead Report",
+    "ref_doctype": "Lead",
+    "report_type": "Query Report",
+    "is_standard": "No",
+    "filters": [
+        {
+            "fieldname": "custom_lead_status",
+            "label": "Status",
+            "fieldtype": "Select",
+          
+        },
+        {
+            "fieldname": "from_date",
+            "label": "From Date",
+            "fieldtype": "Date",
+            "default": "Today",
+        },
+        {
+            "fieldname": "to_date",
+            "label": "To Date",
+            "fieldtype": "Date",
+            "default": "Today",
+        }
+    ]
+}
