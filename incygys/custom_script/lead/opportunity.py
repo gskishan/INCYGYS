@@ -11,7 +11,7 @@ def duplicate_check_in_opportunity(doc, method):
                 "Opportunity", opportunity_mobile_check
             )
             frappe.throw(
-                f"Duplicate mobile number {doc.custom_mobiles} already linked to Opportunity <b>{duplicate_opportunity.opportunity_owner}</b>"
+                f"Duplicate mobile number {doc.custom_mobiles} already linked to Opportunity <b>{duplicate_opportunity.custom_owner_name}</b>"
             )
 
         # Check for duplicate emails in Opportunity
@@ -23,5 +23,5 @@ def duplicate_check_in_opportunity(doc, method):
                 "Opportunity", opportunity_email_check
             )
             frappe.throw(
-                f"Duplicate email {doc.custom_emails} already linked to Opportunity <b>{duplicate_opportunity.opportunity_owner}</b>"
+                f"Duplicate email {doc.custom_emails} already linked to Opportunity <b>{duplicate_opportunity.custom_owner_name}</b>"
             )
