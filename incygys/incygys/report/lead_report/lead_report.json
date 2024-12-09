@@ -12,12 +12,12 @@
  "modified": "2024-06-19 17:31:27.547417",
  "modified_by": "Administrator",
  "module": "incygys",
- "name": "Lead DB Report",
+ "name": "Lead Report",
  "owner": "Administrator",
  "prepared_report": 0,
  "ref_doctype": "Lead",
- "report_name": "Lead DB Report",
- "report_type": "Script Report",
+ "report_name": "Lead Report",
+ "report_type": "Custom Report",
  "roles": [
   {
    "role": "Accounts Manager"
