@@ -16,7 +16,7 @@
  "owner": "Administrator",
  "prepared_report": 0,
  "ref_doctype": "Lead",
- "report_name": "lead_db_report",
+ "report_name": "Lead DB Report",
  "report_type": "Script Report",
  "roles": [
   {
