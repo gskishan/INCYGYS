@@ -1,4 +1,4 @@
-frappe.query_reports["Lead DB Report"] = {
+frappe.query_reports["Lead Report"] = {
     "filters": [
         {
             "fieldname": "from_date",
