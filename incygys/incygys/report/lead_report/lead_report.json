@@ -17,7 +17,7 @@
  "prepared_report": 0,
  "ref_doctype": "Lead",
  "report_name": "Lead Report",
- "report_type": "Custom Report",
+ "report_type": "Script Report",
  "roles": [
   {
    "role": "Accounts Manager"
