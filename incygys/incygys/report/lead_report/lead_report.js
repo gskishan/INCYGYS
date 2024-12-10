@@ -4,15 +4,15 @@ frappe.query_reports["Lead Report"] = {
             "fieldname": "from_date",
             "label": __("From Date"),
             "fieldtype": "Date",
-            "default": frappe.datetime.month_start(),  // Optional: Current month's start date
-            "reqd": 1 // Required field
+            "default": frappe.datetime.month_start(),
+            "reqd": 1
         },
         {
             "fieldname": "to_date",
             "label": __("To Date"),
             "fieldtype": "Date",
-            "default": frappe.datetime.month_end(),  // Optional: Current month's end date
-            "reqd": 1 // Required field
+            "default": frappe.datetime.month_end(),
+            "reqd": 1
         },
         {
             "fieldname": "custom_lead_status",
@@ -23,8 +23,8 @@ frappe.query_reports["Lead Report"] = {
                 "Interested",
                 "Unresponded",
                 "Not-Interested"
-            ], // Defined options for your custom lead status
-            "default": "Potential" // Optional default value
+            ],
+            "default": "Potential"
         }
     ]
 };
