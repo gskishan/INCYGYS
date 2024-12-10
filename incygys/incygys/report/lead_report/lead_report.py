@@ -36,7 +36,7 @@ def execute(filters=None):
     FROM
         `tabLead`
     WHERE
-        `tabLead`.`custom_lead_status` = %(status)s
+        `tabLead`.`custom_lead_status` = %(custom_lead_status)s
         AND `tabLead`.`creation` BETWEEN %(from_date)s AND %(to_date)s
     ORDER BY
         `tabLead`.`creation` DESC
