@@ -42,4 +42,4 @@ def execute(filters=None):
         `tabLead`.`creation` DESC
     """
     data = frappe.db.sql(query, filters, as_dict=True)
-    return [], []
+    return data
